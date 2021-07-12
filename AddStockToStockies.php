@@ -9,8 +9,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Primary Service</title>
-    <meta name="description" content="sendit ">
+    <title>Add Stock </title>
+    <meta name="description" content="FashClub">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -79,50 +79,19 @@ function myFunction() {
   var myVarFromPhp = '<?php session_start();echo $_SESSION["email"] ?>';
     var error = '<?php session_start();echo $_SESSION["error"] ?>';
   if(myVarFromPhp==''){
-window.location.replace("http://139.59.38.160/sendit/Dashboard/page-login.php");
+window.location.replace("http://139.59.38.160/FashClub/Dashboard/page-login.php");
   }else{
      if(error!=''){
       if(error==1){
 alert("Successfully stored information.");
   }else{
     if(error==2){
-alert("Error in Storing information");
+alert("Error in Storing information!");
   }else{
     alert("Please check the information");
   }
   }
 }
-var id='id='+<?php echo $_GET["id"] ?>;
-
-
- var xmlhttp;
-    if (window.XMLHttpRequest) {
-    xmlhttp=new XMLHttpRequest();
-  } else { 
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
- xmlhttp.onreadystatechange=function() {
- 
-    if (this.readyState==4 && this.status==200) {
-          
-         var arr = JSON.parse(this.responseText);
-         console.log(this.responseText);  
-         var i;
-             if(arr.length!=0){
-                           
-                               for( i=0;i<arr.length;i++){
-
-                                      document.getElementById('ID').value=arr[i].ID;
-                            
-                                  document.getElementById('Name').value=arr[i].Name;
-                      
-                               }
-             }
-  }
-}
- xmlhttp.open("POST","getFreshsendits.php",true);
- xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
- xmlhttp.send(id);
   }
 };
 </script>
@@ -131,7 +100,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
 <body onload="myFunction()">
 <?php session_start();
        $_SESSION["error"]='';?>
-    </aside>
+
  <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
@@ -150,12 +119,12 @@ var id='id='+<?php echo $_GET["id"] ?>;
                     </li>
 
 
-                      <h3 class="menu-title">Vendors</h3>
+                      <h3 class="menu-title">Stockies</h3>
                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit Vendors</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit Stockies</a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddStockies.php">Add Vendor</a></li>     
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="VerifyVendors.php">Status Vendors</a></li>     
+                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddStockies.php">Add Stockies</a></li>    
+                                  <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="EditStockies.php">Edit Stockies</a></li>     
                         </ul>
                     </li>
 
@@ -164,7 +133,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit drivers</a>
                         <ul class="sub-menu children dropdown-menu">
                            <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddDrivers.php">Add drivers</a></li>    
-                          <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="EditDriver.php">Edit drivers</a></li>    
+                                  <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="EditDriver.php">Edit drivers</a></li>    
                            <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="TrackDriver.php">Track Driver</a></li>    
                         </ul>
                     </li>
@@ -173,17 +142,10 @@ var id='id='+<?php echo $_GET["id"] ?>;
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Settings</a>
                         <ul class="sub-menu children dropdown-menu">
                            <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="DefaultSettings.php"> APP Settings</a></li>    
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddImages.php"> APP Top Images</a></li>    
+                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddImages.php"> FashClubExpress Images</a></li>    
                         </ul>
                     </li>
 
-  <h3 class="menu-title">PushNotification</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Notify</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="PushNotification.php">Send PushNotification</a></li>    
-                                 </ul>
-                    </li>
 
                        <h3 class="menu-title">Orders</h3>
                      <li class="menu-item-has-children dropdown">
@@ -199,13 +161,14 @@ var id='id='+<?php echo $_GET["id"] ?>;
 
 
                       <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Products</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Category</a>
                         <ul class="sub-menu children dropdown-menu">
                               <li><i class="menu-icon fa fa-th"></i><a href="AllProducts.php">Products</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="AddPrimaryService.php">Primary Category</a></li>
-                            <li style="display: none;"><i class="menu-icon fa fa-th"></i><a href="AddNewSecondaryService.php">Secondary Category</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="sellers.php">Add Products</a></li>
-            
+                            <li><i class="menu-icon fa fa-th"></i><a href="AddNewSecondaryService.php">Secondary Category</a></li>
+                              <li><i class="menu-icon fa fa-th"></i><a href="AddSecondaryService.php">Third Category</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="AddFinalService.php">Add Products</a></li>
+              <li><i class="menu-icon fa fa-th"></i><a href="AddStockToStockies.php">Add Stock to stockies</a></li>
                         </ul>
                     </li>
   <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
@@ -217,6 +180,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
             </div>
         </nav>
     </aside>
+
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
@@ -278,8 +242,8 @@ var id='id='+<?php echo $_GET["id"] ?>;
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
-                            <li><a href="#">Service</a></li>
-                            <li class="active">Add Primary Category</li>
+                            <li><a href="#">Stock</a></li>
+                            <li class="active">Add Stock</li>
                         </ol>
                     </div>
                 </div>
@@ -298,33 +262,71 @@ var id='id='+<?php echo $_GET["id"] ?>;
                                               <div class="col-lg-12">
                                                  <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Edit Primary Category</strong>
+                                                        <strong>Stock Update</strong>
                                                     </div>
                                                     <div class="card-body card-block">
-                                                        <form action="editSecondaryServices.php" method="post" enctype="multipart/form-data" target="_self" class="form-horizontal">
+                                                        <form action="addStocks.php" method="post" enctype="multipart/form-data" target="_self" class="form-horizontal">
                                                             
                                               
                                        
 
                                                     <div class="card-body card-block">
-                                                    
-                                                 <div class="row input-group">
-                                        <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">ID</label></div>
-                             <div class="col-9 col-md-9"><input type="text" id="ID" name="ID"  class="input-sm form-control-sm form-control" readonly  ></div>                                 
-                             <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">Secondary Category&nbspName</label></div>
-                             <div class="col-9 col-md-9"><input type="text" id="Name" name="Name" placeholder="Enter the name" class="input-sm form-control-sm form-control"  ></div>
-                          
-                      
-                               <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">Browse Image</label></div>
-                              <div class="col-8 col-md-8"><input type="file" id="photo" name="photo" class="form-control-file"></div></div>
-                     
-                        
-                         </div>
 
+
+                                                    
+                                                        <div class="row form-group">
+                                                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Stockies</label></div>
+                                                                    <div class="col-12 col-md-9">
+                                                                        <select id="stokies" name="stokies" class="form-control" required>
+                                                                             <option value="">--Select--</option>
+
+                                                                             <?php  
+                        
+                                 require_once 'DB_Connect.php';
+        $db = new Db_Connect();
+        $conn = $db->connect();
+        if(!$conn){
+        echo "Could not connect to DBMS"; 
+         }else {  $sql =$conn->query("SELECT `ID`, Name  FROM `user_details` WHERE role=3  ");
+        foreach($sql as $row) {
+    ?>
+
+ <option value="<?php echo $row['ID']; ?>">  
+                                         <?php 
+                                      
+                                         echo $row['Name'];?>  
+   </option>  
+                      <?php
+}
+}
+?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                                 <div class="row form-group">
+                                                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Secondary Category</label></div>
+                                                                    <div class="col-12 col-md-9">
+                                                                      <input  id="m7" list="m7-datalist" name="item" type="text" class="form-control" placeholder="Enter the item" autocomplete="off" onkeyup ="myHint(this.value)" required style="font-size: 14px;">
+        <datalist id="m7-datalist">
+                        </datalist> 
+  
+                                                                    </div>
+                                                                </div>
+                                                    
+
+                    
                          
-                      
+                            <div class="row form-group">
+                             <div class="col col-md-3"><label for="text-input" class=" form-control-label"> Stock</label></div>
+                             <div class="col-9 col-md-9"><input type="number"  step="0.01" id="Unit" name="Unit" placeholder="Stock available" class="form-control" required ></div></div>                                          
+                  
+                            
+                         
+                       
+                          
                                                      
-                                                          
+                                                          </div>
                                                      
 
                                                
@@ -340,9 +342,12 @@ var id='id='+<?php echo $_GET["id"] ?>;
                                                 </div>
                                              </div>
                                            </div>
-                        
+                           
+                                      
+                                    </div><!-- .content -->
+                                </div><!-- /#right-panel -->
+                                <!-- Right Panel -->
 
-          
                             <script src="vendors/jquery/dist/jquery.min.js"></script>
                             <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
                             <script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -350,5 +355,42 @@ var id='id='+<?php echo $_GET["id"] ?>;
                             <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
                             <script src="assets/js/main.js"></script>
                             <script src="main.js"></script>
+
+
+<script type="text/javascript">
+function myHint(value) {
+var options = "";
+var id='id='+ value;
+var dataList7 = document.getElementById('m7-datalist');
+
+var options = '';
+var request = new XMLHttpRequest();
+
+request.onreadystatechange = function(response) {
+  if (request.readyState === 4) {
+    if (request.status === 200) {
+  
+var jsonOptions = JSON.parse(request.responseText, (key, value) => {
+  
+   var option = document.createElement('option'); 
+        if(value.length!=="" && value.length>4){
+  options += '<option value="'+value+'" />';
+  dataList7.innerHTML = options;
+}
+ 
+});
+  
+
+    } 
+  }
+};
+request.open('POST', 'get_pins.php', true);
+request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+request.send(id);
+    
+
+};
+ </script>
+          
 </body>
 </html>

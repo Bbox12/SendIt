@@ -9,8 +9,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Primary Service</title>
-    <meta name="description" content="sendit ">
+    <title>Third Category</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -92,37 +92,6 @@ alert("Error in Storing information");
   }
   }
 }
-var id='id='+<?php echo $_GET["id"] ?>;
-
-
- var xmlhttp;
-    if (window.XMLHttpRequest) {
-    xmlhttp=new XMLHttpRequest();
-  } else { 
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
- xmlhttp.onreadystatechange=function() {
- 
-    if (this.readyState==4 && this.status==200) {
-          
-         var arr = JSON.parse(this.responseText);
-         console.log(this.responseText);  
-         var i;
-             if(arr.length!=0){
-                           
-                               for( i=0;i<arr.length;i++){
-
-                                      document.getElementById('ID').value=arr[i].ID;
-                            
-                                  document.getElementById('Name').value=arr[i].Name;
-                      
-                               }
-             }
-  }
-}
- xmlhttp.open("POST","getFreshsendits.php",true);
- xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
- xmlhttp.send(id);
   }
 };
 </script>
@@ -131,7 +100,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
 <body onload="myFunction()">
 <?php session_start();
        $_SESSION["error"]='';?>
-    </aside>
+
  <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
@@ -149,62 +118,27 @@ var id='id='+<?php echo $_GET["id"] ?>;
                         <a href="admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
 
-
-                      <h3 class="menu-title">Vendors</h3>
+                      <h3 class="menu-title">Jalpan Page</h3>
                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit Vendors</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Add </a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddStockies.php">Add Vendor</a></li>     
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="VerifyVendors.php">Status Vendors</a></li>     
+                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddCategory.php">Shop Category</a></li>
+                             <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="VerifySalon.php">Verify Shop</a></li>
+                               <li><i class="menu-icon fa fa-sign-in"></i><a href="PushNotification.php">Push Notification</a></li>
+                                 <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="stafftracker.html">Google Map </a></li>
+                                   <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AssignPopularSalon.php">Popular Shop</a></li>
                         </ul>
                     </li>
-
-                 <h3 class="menu-title">Drivers</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit drivers</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddDrivers.php">Add drivers</a></li>    
-                          <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="EditDriver.php">Edit drivers</a></li>    
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="TrackDriver.php">Track Driver</a></li>    
-                        </ul>
-                    </li>
-                    <h3 class="menu-title">Seetings</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Settings</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="DefaultSettings.php"> APP Settings</a></li>    
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddImages.php"> APP Top Images</a></li>    
-                        </ul>
-                    </li>
-
-  <h3 class="menu-title">PushNotification</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Notify</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="PushNotification.php">Send PushNotification</a></li>    
-                                 </ul>
-                    </li>
-
-                       <h3 class="menu-title">Orders</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Orders</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="CurrentOrders.php">Current Orders</a></li>
-                             <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="History.php">Order History</a></li>
-                      
-                        </ul>
-                    </li>
-
-                    
 
 
                       <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Products</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Category</a>
                         <ul class="sub-menu children dropdown-menu">
-                              <li><i class="menu-icon fa fa-th"></i><a href="AllProducts.php">Products</a></li>
+                              <li><i class="menu-icon fa fa-th"></i><a href="AddBrands.php">Brands</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="AddPrimaryService.php">Primary Category</a></li>
-                            <li style="display: none;"><i class="menu-icon fa fa-th"></i><a href="AddNewSecondaryService.php">Secondary Category</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="sellers.php">Add Products</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="AddSecondaryService.php">Secondary Category</a></li>
+                                 <li><i class="menu-icon fa fa-th"></i><a href="AddThirdService.php">Third Category</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="AddFinalService.php">Products</a></li>
             
                         </ul>
                     </li>
@@ -217,6 +151,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
             </div>
         </nav>
     </aside>
+
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
@@ -279,7 +214,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
                             <li><a href="#">Service</a></li>
-                            <li class="active">Add Primary Category</li>
+                            <li class="active">Add Third Category</li>
                         </ol>
                     </div>
                 </div>
@@ -298,10 +233,10 @@ var id='id='+<?php echo $_GET["id"] ?>;
                                               <div class="col-lg-12">
                                                  <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Edit Primary Category</strong>
+                                                        <strong>New Third Category</strong>
                                                     </div>
                                                     <div class="card-body card-block">
-                                                        <form action="editSecondaryServices.php" method="post" enctype="multipart/form-data" target="_self" class="form-horizontal">
+                                                        <form action="addWorkingSiteThird.php" method="post" enctype="multipart/form-data" target="_self" class="form-horizontal">
                                                             
                                               
                                        
@@ -309,24 +244,41 @@ var id='id='+<?php echo $_GET["id"] ?>;
                                                     <div class="card-body card-block">
                                                     
                                                  <div class="row input-group">
-                                        <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">ID</label></div>
-                             <div class="col-9 col-md-9"><input type="text" id="ID" name="ID"  class="input-sm form-control-sm form-control" readonly  ></div>                                 
-                             <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">Secondary Category&nbspName</label></div>
-                             <div class="col-9 col-md-9"><input type="text" id="Name" name="Name" placeholder="Enter the name" class="input-sm form-control-sm form-control"  ></div>
-                          
-                      
-                               <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">Browse Image</label></div>
-                              <div class="col-8 col-md-8"><input type="file" id="photo" name="photo" class="form-control-file"></div></div>
-                     
+                                                       <div class="col col-md-3"><label for="text-input" class=" input-sm form-control-sm form-control-label">Secondary Category*</label></div>
+                             <div class="col-8 col-md-8">  <select  id="role" name="role" class="input-sm form-control-sm form-control"  required >
+   <option value="0">--Select--</option>
+
+                                                                             <?php  
                         
-                         </div>
+                                 require_once 'DB_Connect.php';
+        $db = new Db_Connect();
+        $conn = $db->connect();
+        if(!$conn){
+        echo "Could not connect to DBMS"; 
+         }else {  $sql =$conn->query("SELECT `ID`, `Category` FROM `submenu` WHERE isActive=1 ");
+        foreach($sql as $row) {
+    ?>
 
+ <option value="<?php echo $row['ID']; ?>">  
+                                         <?php 
+                                      
+                                         echo $row['Category'];?>  
+   </option>  
+                      <?php
+}
+}
+?>
+
+                                                                        </select></div>
+                                                        
+                                                                    
+                             <div class="col col-md-3"><label for="text-input" class=" input-sm form-control-sm form-control-label">Third Category&nbspName</label></div>
+                             <div class="col-9 col-md-9"><input type="text" id="Name" name="Name" placeholder="Enter the name" class="input-sm form-control-sm form-control"  required></div>
+                        
+                     
                          
-                      
-                                                     
-                                                          
-                                                     
-
+                         </div>
+                             
                                                
                                                         <button type="submit" class="btn btn-primary btn-sm">
                                                             <i class="fa fa-dot-circle-o"></i> Submit
@@ -340,7 +292,115 @@ var id='id='+<?php echo $_GET["id"] ?>;
                                                 </div>
                                              </div>
                                            </div>
-                        
+                                                  <div class="row">
+                                                            <div class="col-lg-6" >
+                      
+                            <div class="card-header">
+                                <strong class="card-title">Existing Third Category</strong>
+                            </div>
+                              
+                                             
+                                                     
+                                                    <div class="card-body card-block">
+                            
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl/No</th>
+                                                     <th>Primary Category</th>
+                                                   <th>Secondary Category</th>
+                                                       
+                                                              <th>Name</th>
+                                                 <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                  <?php
+                      require_once 'DB_Connect.php';
+              
+                      $db = new Db_Connect();
+                      $conn = $db->connect();
+                        $date=date("Y-m-d");
+                         $server_ip="139.59.38.160";
+                       $users =$conn->query("SELECT ss.ID,ss.Category,s.Category AS Secondary,m.Name FROM subsubmenu ss  INNER JOIN submenu s ON s.ID=ss.IDSubmenu INNER JOIN menu_type m ON m.ID=s.IDMenu  WHERE ss.isActive=1");
+                        if(!empty($users)): $count = 0; foreach($users as $user): $count++;
+                    ?>
+                    <tr>
+                        <td><?php echo $count; ?></td>
+                            <td><?php echo $user['Name']; ?></td>
+                                     <td><?php echo $user['Secondary']; ?></td>
+                          
+                                 <td><a href="EditThirdService.php?id=<?php echo $user['ID']; ?>" style="display:block;color: blue;"><u><?php echo $user['Category']; ?></u></a></td>
+                        <td><a href="SiteDeleteLinkThird.php?id=<?php echo $user['ID']; ?>" style="color: red;"><?php echo "DEL"; ?></td>
+              
+                    </tr>
+                    <?php endforeach; else: ?>
+                    <tr><td colspan="5">No user(s) found......</td></tr>
+                    <?php endif; ?>
+                                    </tbody>
+                                </table>                              
+                                                
+                        </div>
+               
+
+</div>
+                        <div class="col-lg-6" >
+                    
+                            <div class="card-header">
+                                <strong class="card-title">In Active Third Category</strong>
+                            </div>
+                              
+                                             
+                                                     
+                                                    <div class="card-body card-block">
+                            
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl/No</th>
+                                                     <th>Primary Category</th>
+                                               <th>Secondary Category</th>
+                                                    
+                                                              <th>Name</th>
+                                                 <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                  <?php
+                      require_once 'DB_Connect.php';
+              
+                      $db = new Db_Connect();
+                      $conn = $db->connect();
+                        $date=date("Y-m-d");
+                         $server_ip="139.59.38.160";
+                     $users =$conn->query("SELECT ss.ID,ss.Category,s.Category AS Secondary,m.Name FROM subsubmenu ss  INNER JOIN submenu s ON s.ID=ss.IDSubmenu INNER JOIN menu_type m ON m.ID=s.IDMenu  WHERE ss.isActive=0");
+                        if(!empty($users)): $count = 0; foreach($users as $user): $count++;
+                    ?>
+                    <tr>
+                        <td><?php echo $count; ?></td>
+                            <td><?php echo $user['Name']; ?></td>
+                           <td><?php echo $user['Secondary']; ?></td>
+                         
+                        <td><?php echo $user['Category']; ?></td>
+                                  
+                        <td><a href="SiteActiveLinkThird.php?id=<?php echo $user['ID']; ?>" style="color: green;"><?php echo "Activate"; ?></td>
+              
+                    </tr>
+                    <?php endforeach; else: ?>
+                    <tr><td colspan="5">No user(s) found......</td></tr>
+                    <?php endif; ?>
+                                    </tbody>
+                                </table>                              
+                                                
+                        </div>
+                    </div>
+
+</div>
+                                      
+                                    </div><!-- .content -->
+                                </div><!-- /#right-panel -->
+                                <!-- Right Panel -->
+
 
           
                             <script src="vendors/jquery/dist/jquery.min.js"></script>

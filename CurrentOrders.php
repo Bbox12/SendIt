@@ -44,7 +44,7 @@ window.location.replace("http://139.59.38.160/sendit/Dashboard/page-login.php");
 
 <body onload="myFunction()">
 
-  <aside id="left-panel" class="left-panel">
+ <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
             <div class="navbar-header">
@@ -66,7 +66,7 @@ window.location.replace("http://139.59.38.160/sendit/Dashboard/page-login.php");
                      <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit Vendors</a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddVendorsCategory.php">Vendor Category</a></li>   
+                               <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddVendorsCategory.php">Vendor Category</a></li>   
                            <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddStockies.php">Add Vendor</a></li>     
                            <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="VerifyVendors.php">Status Vendors</a></li>     
                         </ul>
@@ -108,8 +108,6 @@ window.location.replace("http://139.59.38.160/sendit/Dashboard/page-login.php");
                         </ul>
                     </li>
 
-
-
                     
 
 
@@ -123,17 +121,6 @@ window.location.replace("http://139.59.38.160/sendit/Dashboard/page-login.php");
             
                         </ul>
                     </li>
-
-                     <h3 class="menu-title">BULK UPLOAD</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Upload</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddbulkUpload_1.php">File and Images</a></li>
-                        
-                        </ul>
-                    </li>
-
-
   <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu ">
                         <a href="page-login.php" ><i class="menu-icon fa fa-sign-out"></i> LOGOUT</a>

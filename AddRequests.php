@@ -9,8 +9,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Primary Service</title>
-    <meta name="description" content="sendit ">
+    <title>Add requests</title>
+    <meta name="description" content="FashClub">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -79,7 +79,7 @@ function myFunction() {
   var myVarFromPhp = '<?php session_start();echo $_SESSION["email"] ?>';
     var error = '<?php session_start();echo $_SESSION["error"] ?>';
   if(myVarFromPhp==''){
-window.location.replace("http://139.59.38.160/sendit/Dashboard/page-login.php");
+window.location.replace("http://139.59.38.160/FashClub/Dashboard/page-login.php");
   }else{
      if(error!=''){
       if(error==1){
@@ -92,46 +92,19 @@ alert("Error in Storing information");
   }
   }
 }
-var id='id='+<?php echo $_GET["id"] ?>;
 
 
- var xmlhttp;
-    if (window.XMLHttpRequest) {
-    xmlhttp=new XMLHttpRequest();
-  } else { 
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
- xmlhttp.onreadystatechange=function() {
- 
-    if (this.readyState==4 && this.status==200) {
-          
-         var arr = JSON.parse(this.responseText);
-         console.log(this.responseText);  
-         var i;
-             if(arr.length!=0){
-                           
-                               for( i=0;i<arr.length;i++){
 
-                                      document.getElementById('ID').value=arr[i].ID;
-                            
-                                  document.getElementById('Name').value=arr[i].Name;
-                      
-                               }
-             }
-  }
-}
- xmlhttp.open("POST","getFreshsendits.php",true);
- xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
- xmlhttp.send(id);
-  }
 };
+}
+
 </script>
 </head>
 
 <body onload="myFunction()">
 <?php session_start();
        $_SESSION["error"]='';?>
-    </aside>
+
  <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
@@ -150,64 +123,42 @@ var id='id='+<?php echo $_GET["id"] ?>;
                     </li>
 
 
-                      <h3 class="menu-title">Vendors</h3>
+                            <h3 class="menu-title">Questionnaire</h3>
                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit Vendors</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Questions</a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddStockies.php">Add Vendor</a></li>     
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="VerifyVendors.php">Status Vendors</a></li>     
+                               <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddRequests.php">Add mandatory request list</a></li>
+                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddPrimaryService.php">Add health Questions</a></li>
+                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="EditQuestions.php">Display all Questions</a></li>  
                         </ul>
                     </li>
 
-                 <h3 class="menu-title">Drivers</h3>
+
+
+                      <h3 class="menu-title">Main Page</h3>
                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit drivers</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Add </a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddDrivers.php">Add drivers</a></li>    
-                          <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="EditDriver.php">Edit drivers</a></li>    
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="TrackDriver.php">Track Driver</a></li>    
-                        </ul>
-                    </li>
-                    <h3 class="menu-title">Seetings</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Settings</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="DefaultSettings.php"> APP Settings</a></li>    
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddImages.php"> APP Top Images</a></li>    
+                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="WorkingSites.php">Add Hot spot</a></li>
+                     <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="Quaratinezone.php">Display Hot spot</a></li>
+                                
                         </ul>
                     </li>
 
-  <h3 class="menu-title">PushNotification</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Notify</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="PushNotification.php">Send PushNotification</a></li>    
-                                 </ul>
-                    </li>
 
-                       <h3 class="menu-title">Orders</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Orders</a>
+
+                          <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Policy</a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="CurrentOrders.php">Current Orders</a></li>
-                             <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="History.php">Order History</a></li>
-                      
+                            <li><i class="menu-icon fa fa-th"></i><a href="http://139.59.38.160/comingsoon/index.html">New</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="http://139.59.38.160/comingsoon/index.html">Update</a></li>
                         </ul>
                     </li>
 
-                    
 
-
-                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Products</a>
-                        <ul class="sub-menu children dropdown-menu">
-                              <li><i class="menu-icon fa fa-th"></i><a href="AllProducts.php">Products</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="AddPrimaryService.php">Primary Category</a></li>
-                            <li style="display: none;"><i class="menu-icon fa fa-th"></i><a href="AddNewSecondaryService.php">Secondary Category</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="sellers.php">Add Products</a></li>
-            
-                        </ul>
-                    </li>
+                   
+                 
+         
   <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu ">
                         <a href="page-login.php" ><i class="menu-icon fa fa-sign-out"></i> LOGOUT</a>
@@ -278,7 +229,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
-                            <li><a href="#">Service</a></li>
+                            <li><a href="#">Category</a></li>
                             <li class="active">Add Primary Category</li>
                         </ol>
                     </div>
@@ -286,7 +237,8 @@ var id='id='+<?php echo $_GET["id"] ?>;
             </div>
         </div>
 
-        <div class="content mt-3">
+
+                <div class="content mt-3">
             <div class="animated fadeIn">
 
 
@@ -298,33 +250,29 @@ var id='id='+<?php echo $_GET["id"] ?>;
                                               <div class="col-lg-12">
                                                  <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Edit Primary Category</strong>
+                                                        <strong>Products</strong>
                                                     </div>
                                                     <div class="card-body card-block">
-                                                        <form action="editSecondaryServices.php" method="post" enctype="multipart/form-data" target="_self" class="form-horizontal">
+                                                          <form action="addRequeset.php" method="post" enctype="multipart/form-data" target="_self"  class="form-horizontal">
                                                             
                                               
                                        
 
                                                     <div class="card-body card-block">
-                                                    
-                                                 <div class="row input-group">
-                                        <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">ID</label></div>
-                             <div class="col-9 col-md-9"><input type="text" id="ID" name="ID"  class="input-sm form-control-sm form-control" readonly  ></div>                                 
-                             <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">Secondary Category&nbspName</label></div>
-                             <div class="col-9 col-md-9"><input type="text" id="Name" name="Name" placeholder="Enter the name" class="input-sm form-control-sm form-control"  ></div>
-                          
-                      
-                               <div class="col col-md-3" style="margin: 10; padding: 10px;"><label for="text-input" class=" form-control-label">Browse Image</label></div>
-                              <div class="col-8 col-md-8"><input type="file" id="photo" name="photo" class="form-control-file"></div></div>
-                     
-                        
-                         </div>
+
+                                                           <div class="row form-group">
+                             <div class="col col-md-3"><label for="text-input" class=" form-control-label"> Requests</label></div>
+                             <div class="col-9 col-md-9"><input type="text" id="Name" name="Name" placeholder="Enter the name  (sick note, medical script, covid tests, x rays etc)" class="input-sm form-control-sm form-control"  required></div></div>                                          
+                  
+                                                            
+                                      
 
                          
+                   
+                          
                       
-                                                     
-                                                          
+                                              
+                                                          </div>
                                                      
 
                                                
@@ -340,7 +288,124 @@ var id='id='+<?php echo $_GET["id"] ?>;
                                                 </div>
                                              </div>
                                            </div>
+                           
+                                      
+                                    </div><!-- .content -->
+                                </div><!-- /#right-panel -->
+                                <!-- Right Panel -->
+
+
+                                                  <div class="content mt-3">
+            <div class="animated fadeIn">
+
+
+                <div class="row">
+                                                            <div class="col-lg-6" >
+                        <div class="card">
+                                               
+                            <div class="card-header">
+                                <strong class="card-title">Existing Primary Category</strong>
+                            </div>
+                              
+                                             
+                                                     
+                                                    <div class="card-body card-block">
+                            
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl/No</th>
+                                                <th>Requests</th>
+                                                                  
+                                                 <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                  <?php
+                      require_once 'DB_Connect.php';
+              
+                      $db = new Db_Connect();
+                      $conn = $db->connect();
+                        $date=date("Y-m-d");
+                         $server_ip="139.59.38.160";
+                       $users =$conn->query("SELECT `ID`, `Name`, `isActive`, `User`, `Date`, `Time` FROM `requests` WHERE `isActive`=1");
+                        if(!empty($users)): $count = 0; foreach($users as $user): $count++;
+                    ?>
+                    <tr>
+                        <td><?php echo $count; ?></td>
+           <td><?php echo $user['Name']; ?></td>
                         
+
+                          
+                        <td><a href="DeleteRequest.php?id=<?php echo $user['ID']; ?>" style="color: red;"><?php echo "DEL"; ?></td>
+              
+                    </tr>
+                    <?php endforeach; else: ?>
+                    <tr><td colspan="5">No user(s) found......</td></tr>
+                    <?php endif; ?>
+                                    </tbody>
+                                </table>                              
+                                                
+                        </div>
+               
+
+</div>
+</div>
+                        <div class="col-lg-6" >
+                      <div class="card">
+                                               
+                            <div class="card-header">
+                                <strong class="card-title">Not Active Primary Category</strong>
+                            </div>
+                              
+                                             
+                                                     
+                                                    <div class="card-body card-block">
+                            
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl/No</th>
+                                                <th>Name</th>
+                                                       
+                                                 <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                  <?php
+                      require_once 'DB_Connect.php';
+              
+                      $db = new Db_Connect();
+                      $conn = $db->connect();
+                        $date=date("Y-m-d");
+                         $server_ip="139.59.38.160";
+                       $users =$conn->query("SELECT `ID`, `Name`, `isActive`, `User`, `Date`, `Time` FROM `menu_type` WHERE `isActive`=0");
+                        if(!empty($users)): $count = 0; foreach($users as $user): $count++;
+                    ?>
+                    <tr>
+                        <td><?php echo $count; ?></td>
+                        <td><?php echo $user['Name']; ?></td>
+                      
+
+                        <td><a href="SiteActiveLink.php?id=<?php echo $user['ID']; ?>" style="color: green;"><?php echo "Activate"; ?></td>
+              
+                    </tr>
+                    <?php endforeach; else: ?>
+                    <tr><td colspan="5">No user(s) found......</td></tr>
+                    <?php endif; ?>
+                                    </tbody>
+                                </table>                              
+                                                
+                        </div>
+                    </div>
+
+</div>
+                                      
+                                    </div><!-- .content -->
+                                </div><!-- /#right-panel -->
+                               </div>
+  </div><!-- /#right-panel -->
+                               </div>
 
           
                             <script src="vendors/jquery/dist/jquery.min.js"></script>

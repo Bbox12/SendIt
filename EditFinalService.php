@@ -135,7 +135,7 @@ var id='id='+<?php echo $_GET["id"] ?>;
 <?php session_start();
        $_SESSION["error"]='';?>
 
-  <aside id="left-panel" class="left-panel">
+ <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
             <div class="navbar-header">
@@ -152,79 +152,49 @@ var id='id='+<?php echo $_GET["id"] ?>;
                         <a href="admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
 
-
-                      <h3 class="menu-title">Vendors</h3>
+                      <h3 class="menu-title">Salon Page</h3>
                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit Vendors</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Add </a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddVendorsCategory.php">Vendor Category</a></li>   
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddStockies.php">Add Vendor</a></li>     
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="VerifyVendors.php">Status Vendors</a></li>     
+                             <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="VerifySalon.php">Verify Salon</a></li>
+                               <li><i class="menu-icon fa fa-sign-in"></i><a href="PushNotification.php">Push Notification</a></li>
+                                 <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="stafftracker.html">Google Map </a></li>
+                                   <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AssignPopularSalon.php">Popular Salon</a></li>
                         </ul>
                     </li>
-
-                 <h3 class="menu-title">Drivers</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit drivers</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddDrivers.php">Add drivers</a></li>    
-                          <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="EditDriver.php">Edit drivers</a></li>    
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="TrackDriver.php">Track Driver</a></li>    
-                        </ul>
-                    </li>
-                    <h3 class="menu-title">Seetings</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Settings</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="DefaultSettings.php"> APP Settings</a></li>    
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddImages.php"> APP Top Images</a></li>    
-                        </ul>
-                    </li>
-
-  <h3 class="menu-title">PushNotification</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Notify</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="PushNotification.php">Send PushNotification</a></li>    
-                                 </ul>
-                    </li>
-
-                       <h3 class="menu-title">Orders</h3>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Orders</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="CurrentOrders.php">Current Orders</a></li>
-                             <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="History.php">Order History</a></li>
-                      
-                        </ul>
-                    </li>
-
-
-
-                    
 
 
                       <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Products</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Service</a>
                         <ul class="sub-menu children dropdown-menu">
-                              <li><i class="menu-icon fa fa-th"></i><a href="AllProducts.php">Products</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="AddPrimaryService.php">Primary Category</a></li>
-                            <li style="display: none;"><i class="menu-icon fa fa-th"></i><a href="AddNewSecondaryService.php">Secondary Category</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="sellers.php">Add Products</a></li>
-            
+                            <li><i class="menu-icon fa fa-th"></i><a href="AddPrimaryService.php">Primary Service</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="AddSecondaryService.php">Secondary Service</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="AddFinalService.php">Final Service</a></li>
+                 
                         </ul>
                     </li>
 
-                     <h3 class="menu-title">BULK UPLOAD</h3>
+
+                          <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Policy</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="NewPolicy.php">New</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="UpdatePolicy.php">Update</a></li>
+                        </ul>
+                    </li>
+
+
+                   
+                   <h3 class="menu-title">Operation</h3>
                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Upload</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Staff</a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="AddbulkUpload_1.php">File and Images</a></li>
-                        
+                             <li><i class="menu-icon fa fa-th"></i><a href="staff_registration_admin.php">Registration</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="VerifyStaff.php">Verify</a></li>
+                               <li><i class="menu-icon fa fa-th"></i><a href="DeleteStaff.php">Delete</a></li>
                         </ul>
                     </li>
-
-
+         
   <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu ">
                         <a href="page-login.php" ><i class="menu-icon fa fa-sign-out"></i> LOGOUT</a>
@@ -234,7 +204,6 @@ var id='id='+<?php echo $_GET["id"] ?>;
             </div>
         </nav>
     </aside>
-
 
     <div id="right-panel" class="right-panel">
 
